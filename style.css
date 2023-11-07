@@ -20,10 +20,14 @@ body {
 
 .display {
     width: 100%;
-    padding: 30px;
+    height: 100px;
+    padding: 20px;
     margin-bottom: 20px;
     border: 5px solid black;
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .buttons {
@@ -38,10 +42,27 @@ body {
 }
 
 .buttons .grow {
-    flex-grow: 2;
+    flex-grow: 1;
 }
 
 .buttons button {
     max-height: 50px;
     width: 50px;
+}
+
+@media (min-width: 40rem) {
+    .calculator-body {
+        max-width: 400px;
+        max-height: 600px;
+    }
+
+    .buttons .grow {
+        flex-grow: 0;
+        width: 155px;
+    }
+
+    .buttons button {
+        max-height: 80px;
+        width: 70px;
+    }
 }
