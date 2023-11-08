@@ -59,3 +59,26 @@ numbersBtn.forEach(btn => {
         currentNumberBox.textContent = displayValue;
     });
 });
+
+operatorsBtn.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+        displayValue = displayValue.split(' ');
+        [firstNumber, operator, secondNumber] = [...displayValue];
+        if (firstNumber && operator && secondNumber) {
+            displayValue = operate(operator, +firstNumber, +secondNumber) + '';
+            currentNumberBox.textContent = displayValue;
+        }
+        displayValue += ` ${e.target.textContent} `;
+        console.log(displayValue);
+    });
+});
+
+equalsBtn.addEventListener('click', function () {
+    displayValue = displayValue.split(' ');
+    [firstNumber, operator, secondNumber] = [...displayValue];
+
+    if (firstNumber && operator && secondNumber) {
+        displayValue = operate(operator, +firstNumber, +secondNumber);
+        currentNumberBox.textContent = displayValue;
+    }
+});
