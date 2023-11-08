@@ -18,11 +18,6 @@ const modulo = function (a, b) {
     return a % b;
 };
 
-let firstNumber = 0;
-let operator;
-let secondNumber = 0;
-let result;
-
 const operate = function (operator, num1, num2) {
     switch (operator) {
         case '+':
@@ -42,22 +37,25 @@ const operate = function (operator, num1, num2) {
 
 //////////////////////////////////////////////////////
 // DOM Elements
-const numbersBtn = document.querySelectorAll('.number');
-const operatorsBtn = document.querySelectorAll('.operator');
+
+// BOXES
 const lastNumberBox = document.querySelector('#last-number');
 const currentNumberBox = document.querySelector('#current-number');
+
+// BUTTONS
+const numbersBtn = document.querySelectorAll('.number');
+const operatorsBtn = document.querySelectorAll('.operator');
 const equalsBtn = document.querySelector('#equals');
 const clearBtn = document.querySelector('#clear');
-const deleteBtn = document.querySelector('#delete');
+
+let displayValue = '';
+let firstNumber;
+let secondNumber;
+let operator;
 
 numbersBtn.forEach(btn => {
     btn.addEventListener('click', function (e) {
-        currentNumberBox.textContent += e.target.textContent;
+        displayValue += e.target.textContent;
+        currentNumberBox.textContent = displayValue;
     });
-});
-
-clearBtn.addEventListener('click', function () {
-    firstNumber, secondNumber, (result = 0);
-    currentNumberBox.textContent = '';
-    lastNumberBox.textContent = '';
 });
