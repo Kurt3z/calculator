@@ -39,7 +39,6 @@ const operate = function (operator, num1, num2) {
 // DOM Elements
 
 // BOXES
-const lastNumberBox = document.querySelector('#last-number');
 const currentNumberBox = document.querySelector('#current-number');
 
 // BUTTONS
@@ -64,11 +63,14 @@ operatorsBtn.forEach(btn => {
     btn.addEventListener('click', function (e) {
         displayValue = displayValue.split(' ');
         [firstNumber, operator, secondNumber] = [...displayValue];
+
         if (firstNumber && operator && secondNumber) {
             displayValue = operate(operator, +firstNumber, +secondNumber) + '';
+            displayValue += ` ${e.target.textContent} `;
             currentNumberBox.textContent = displayValue;
+        } else {
+            displayValue += ` ${e.target.textContent} `;
         }
-        displayValue += ` ${e.target.textContent} `;
         console.log(displayValue);
     });
 });
