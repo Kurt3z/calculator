@@ -31,7 +31,7 @@ body {
     height: 140px;
     padding: 20px;
     font-size: 35px;
-    border: 2px solid #e9b824;
+    border: 2px solid #000;
     border-radius: 20px;
     display: flex;
     justify-content: flex-end;
@@ -58,7 +58,7 @@ body {
     width: 60px;
     font-size: 17px;
     background-color: #e2eeed;
-    border: 2px solid #e9b824;
+    border: 2px solid #000;
     border-radius: 15px;
     cursor: pointer;
 }
