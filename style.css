@@ -9,8 +9,31 @@ body {
     font-family: 'Comfortaa', sans-serif;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+main {
+    flex-grow: 2;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    padding: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+
+footer ion-icon {
+    color: #000;
+    margin-bottom: -1.8px;
+    transition: 0.1s;
+}
+
+footer ion-icon:hover {
+    transform: scale(1.2);
 }
 
 .calculator-body {
@@ -61,6 +84,10 @@ body {
     border: 2px solid #000;
     border-radius: 15px;
     cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #c9d4d3;
 }
 
 @media (min-width: 40rem) {
