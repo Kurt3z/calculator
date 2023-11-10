@@ -91,6 +91,7 @@ operatorsBtn.forEach(btn => {
 
         if (firstNumber && operator && secondNumber) {
             displayValue = operate(operator, +firstNumber, +secondNumber) + '';
+            insertionValue = displayValue;
             displayValue += ` ${e.target.textContent} `;
             currentNumberBox.textContent = displayValue;
         } else {
@@ -113,6 +114,7 @@ equalsBtn.addEventListener('click', function () {
 
     if (firstNumber && operator && secondNumber) {
         displayValue = '' + operate(operator, +firstNumber, +secondNumber);
+        insertionValue = displayValue;
         currentNumberBox.textContent = displayValue;
     }
 });
